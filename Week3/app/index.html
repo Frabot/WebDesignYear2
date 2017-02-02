@@ -4,16 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Lecture 2</title>
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="../node_modules/angular/angular.min.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/week-three-controller.js"></script>
-
+	<link type="text/css" rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
     <div ng-controller="WeekThreeController">
-        <h2>{{weekThreeTitle}}</h2>
-    </div>
+			<h1>{{weekThreeTitle}}</h1>
+	   
+		
+			<h2>Exercise 1</h2>
+			<div ng-controller="ParentCtrl">
+				<h3>{{ title }}</h3>
+				<p>{{description}}</p>
+				<div ng-controller="ChildCtrl">
+					<h3>{{title}}</h3>
+					<input type="text" ng-model="$parent.description">
+				</div>
+			</div>
+		
+			<h2>Exercise 2</h2>
+			
+			<div ng-controller="jsonEx">
+				<div ng-repeat="phone in phones">
+					<p>{{phone.age}}</p>
+					<p>{{phone.id}}</p>
+					<p>{{phone.name}}</p>
+					<p>{{phone.snippet}}</p>
+				</div>
+			</div>
+			
+			<h2>Exercise 3</h2>
+	 </div>
+	
+	<!-- $http service to read the data into a $scope variable -Display this data using ng-repeat -The $http service returns a promise. You will need to handle this using a then/catch block. https://www.youtube.com/watch?v=Q0BZV7P0Bqs -- >
+	
+	
+	
+	<!-- Pixabay key 4440282-7679e699be976baee21eeaf12 -->
 </body>
 </html>
