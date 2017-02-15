@@ -21,7 +21,7 @@ var app = angular.module('app',['ui.router'])
   var blogState = {
     name: 'blog',
     url: '/blog',
-    templateUrl: '../blog.html'
+    templateUrl: '../blog.html',
   }
 
   $stateProvider.state(helloState);
